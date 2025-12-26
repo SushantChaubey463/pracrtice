@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="card">
+  </div>
+    <script>       
+let card=document.createElement("div")
+document.body.appendChild(card)
+card.style.border="1px solid black";
+card.style.width="199px";
+// card.style.height="px";
+card.style.backgroundColor="white";
+// card.style.border="2px solid black";
+card.style.borderRadius="5px";
+let img=document.createElement("img")
+card.appendChild(img)
+img.src="download.jpg"
+img.style.width="190px";
+img.style.margin="5px";
+img.style.borderRadius="4.5px";
+
+
+let span=document.createElement("span");
+card.appendChild(span);
+span.innerText="Nature"
+let span2=document.createElement("span");
+card.appendChild(span2);
+span2.innerText="lake"
+span.style.margin="5px";
+span.style.border="1px solid black";
+span.style.borderRadius="5px";
+span.style.padding="2px 10px";
+span.style.backgroundColor="White"
+
+span2.style.margin="5px";
+span2.style.border="1px solid black";
+span2.style.borderRadius="5px";
+span2.style.padding="2px 10px ";
+span2.style.backgroundColor="White"
+
+let h3=document.createElement("h3");
+card.appendChild(h3);
+h3.innerText="Shushant"
+h3.style.backgroundColor="White";
+h3.style.padding="0px 0px 0px 12px"
+
+
+let p=document.createElement("p");
+card.appendChild(p);
+p.innerText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus nam quas saepe voluptates, sit tempore adipisci? Nesciunt id expedita consectetur repellendus, nulla magnam earum, ullam cum maiores exercitationem aliquam aliquid sunt."
+p.style.backgroundColor="white";
+p.style.padding="0px 0px 0px 12px"
+p.style.fontSize="10px"
+p.style.textAlign="Centre";
+
+let btn=document.createElement("button");
+card.appendChild(btn);
+btn.innerText="Pre";
+btn.style.margin="10px 10px 10px 10px"
+btn.style.padding="5px";
+btn.style.borderRadius="11px"
+btn.style.backgroundColor=""
+
+
+    </script>
+</body>
+</html>

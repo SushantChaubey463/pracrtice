@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      padding: 6px;
+      margin: 5px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+      background: #f2f2f2;
+      padding: 8px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn {
+      margin-left: 5px;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  
+  <input type="text" id="itemInput" placeholder="Enter item">
+  <button id="addBtn">Add</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    const addBtn = document.getElementById("addBtn");
+    const itemInput = document.getElementById("itemInput");
+    const list = document.getElementById("list");
+    
+    // Add item event
+    addBtn.addEventListener("click", function() {
+      const value = itemInput.value.trim();
+      if (value === "") return;
+
+      createListItem(value);
+      itemInput.value = "";
+    });
+
+    function createListItem(value) {
+      const li = document.createElement("li");
+
+      // Item text
+      const span = document.createElement("span");
+      span.textContent = value;
+
+      // Edit button
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "Edit";
+      editBtn.classList.add("btn", "edit");
+
+      editBtn.addEventListener("click", function() {
+        const newValue = prompt("Edit item:", span.textContent);
+        if (newValue !== null && newValue.trim() !== "") {
+          span.textContent = newValue.trim();
+        }
+      });
+    //   editBtn.style.backgroundColor="orange";
+    //   editBtn.style.color="White";
+
+      // Remove button
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.classList.add("btn", "remove");
+    //   removeBtn.style.backgroundColor="Red"
+    //   removeBtn.style.color="White";
+
+      removeBtn.addEventListener("click", function() {
+        list.removeChild(li);
+      });
+
+      // Append everything
+      li.appendChild(span);
+      li.appendChild(editBtn);
+      li.appendChild(removeBtn);
+      list.appendChild(li);
+    }
+  </script>
+
+</body>
+</html>
